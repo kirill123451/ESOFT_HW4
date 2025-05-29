@@ -1,0 +1,65 @@
+* {box-sizing: border-box;} 
+form {
+  position: relative;
+  right: 100%;
+  width: 200%;
+}
+
+.d1 input {
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  border: 2px solid #7b7cab;
+  border-radius: 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9c2020;
+}
+.d1 button {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+
+.d1 input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.d1 input:focus::placeholder {
+  color: transparent;
+}
+
+.d1 .search-hint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background: #F9F0DA;
+  border: 1px solid #7b7cab;
+  border-radius: 0 0 5px 5px;
+  color: #705454;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.d1 input:focus ~ .search-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.magnifyingGlassIcon {
+  width: 60%;
+  height: 60%;
+}
