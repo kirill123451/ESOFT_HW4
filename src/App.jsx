@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import Header from './Header/Header.jsx'
+import FilterPanel from './FilterPanel.jsx'
 
 function App() {
 
   return (
     <>
       <Header/>
-      <div>ПП</div>
+      <FilterPanel/>
     </>
   )
 }
