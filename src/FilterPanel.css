@@ -1,0 +1,184 @@
+
+.react-select__control {
+    width: 100%;
+  min-width: 200px; 
+  max-width: 400px;
+  min-height: 40px;
+  border-radius: 8px;
+  border-color: #d1d5db;
+  margin: auto;
+  
+}
+
+.react-select__control--is-focused {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 1px #4f46e5 !important;
+}
+
+.react-select__control:hover {
+  border-color: #4f46e5;
+}
+
+.react-select__menu {
+  margin-top: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  width: 10%;
+}
+
+.react-select__option {
+  background-color: white;
+  color: #1f2937;
+}
+
+.react-select__option--is-selected {
+  background-color: #4f46e5 !important;
+  color: white !important;
+}
+
+.react-select__option--is-focused {
+  background-color: #e0e7ff !important;
+  color: #1f2937 !important;
+}
+
+.react-select__dropdown-indicator {
+  color: #9ca3af;
+}
+
+.react-select__dropdown-indicator:hover {
+  color: #6b7280;
+}
+
+.react-select__multi-value {
+  background-color: #e0e7ff;
+  border-radius: 4px;
+}
+
+.react-select__multi-value__label {
+  color: #4f46e5;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color: #a5b4fc;
+  color: white;
+}
+
+.react-select__placeholder {
+  color: #9ca3af;
+}
+
+.react-select__input {
+  color: #1f2937 !important;
+}
+
+.dark .react-select__control {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.dark .react-select__menu {
+  background-color: #374151;
+}
+
+.dark .react-select__option {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+/* ползунок годов */
+.filter-panel {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.filter-section {
+    margin-bottom: 2rem;
+}
+
+.filter-title {
+    color: #2d3748;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Стили для RangeSlider */
+.range-slider-container {
+    position: relative;
+    padding: 1rem 0.5rem;
+    z-index: 0;
+}
+
+.custom-range-slider {
+    --range-slider-height: 6px;
+    --range-slider-thumb-size: 18px;
+    --range-slider-thumb-border: 2px solid #4299e1;
+}
+
+.custom-range-slider .range-slider__thumb {
+    width: var(--range-slider-thumb-size);
+    height: var(--range-slider-thumb-size);
+    border: var(--range-slider-thumb-border);
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease;
+}
+
+.custom-range-slider .range-slider__thumb:active {
+    transform: scale(1.15);
+}
+
+.custom-range-slider .range-slider__range {
+    background: #4299e1;
+    height: var(--range-slider-height);
+}
+
+.custom-range-slider .range-slider__track {
+    background: #e2e8f0;
+    height: var(--range-slider-height);
+    border-radius: 3px;
+}
+
+/* Стили для отображения значений */
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    color: #4a5568;
+    font-size: 0.875rem;
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .filter-panel {
+        background: #2d3748;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .filter-title {
+        color: #275ba0;
+    }
+    
+    .react-select__control {
+        background: #4a5568;
+        border-color: #4a5568;
+    }
+    
+    .react-select__multi-value {
+        background-color: #2c5282;
+    }
+    
+    .react-select__multi-value__label {
+        color: #ebf8ff;
+    }
+    
+    .custom-range-slider .range-slider__track {
+        background: #4a5568;
+    }
+}
+
