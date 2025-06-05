@@ -87,31 +87,40 @@
 }
 /* ползунок годов */
 .filter-panel {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    font-family: 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
 
 .filter-section {
     margin-bottom: 2rem;
 }
 
 .filter-title {
-    color: #2d3748;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+  color: #2d3748;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Стили для RangeSlider */
 .range-slider-container {
-    position: relative;
-    padding: 1rem 0.5rem;
-    z-index: 0;
+  padding-top: 10px;
 }
 
 .custom-range-slider {
@@ -146,11 +155,11 @@
 
 /* Стили для отображения значений */
 .range-values {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5rem;
-    color: #4a5568;
-    font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #4a5568;
 }
 
 /* Темная тема */
@@ -182,3 +191,60 @@
     }
 }
 
+.favorites-filter {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.favorites-filter input {
+  width: 16px;
+  height: 16px;
+  accent-color: #4299e1;
+}
+
+.favorites-filter span {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.favorites-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.favorites-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #4299e1;
+}
+
+/* Для темной темы */
+@media (prefers-color-scheme: dark) {
+  .favorites-filter span {
+    color: #e2e8f0;
+  }
+}
+
+.reset-button {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+.reset-button:hover {
+    background-color: #0056b3; 
+}
+
+.reset-button:active {
+    background-color: #003872; 
+}
