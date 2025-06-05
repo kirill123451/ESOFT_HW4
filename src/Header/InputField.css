@@ -52,6 +52,7 @@ form {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   pointer-events: none;
+  z-index: 1;
 }
 
 .d1 input:focus ~ .search-hint {
