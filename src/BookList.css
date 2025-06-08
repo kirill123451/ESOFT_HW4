@@ -1,0 +1,13 @@
+.book-list-container {
+  padding: 20px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+

@@ -1,25 +1,36 @@
-import { useEffect, useState } from "react";
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
 import Select from "react-select";
 import './FilterPanel.css';
 
-export default function FilterPanel() {
-  const [range, setRange] = useState([1920, 2000]);
-  const [selectedAuthors, setSelectedAuthors] = useState([]);
-  const [favoritesOnly, setFavoritesOnly] = useState(false);
-
+export default function FilterPanel({ currentFilters, onFilterChange }) {
   const authorOptions = [
-    { value: 'author1', label: 'Гоголь Н.В', isFavorite: true },
-    { value: 'author2', label: 'Пушкин А.С', isFavorite: false },
-    { value: 'author3', label: 'Чехов А.П', isFavorite: true }
+    { value: 'Гоголь', label: 'Гоголь Н.В' },
+    { value: 'Пушкин', label: 'Пушкин А.С' },
+    { value: 'Чехов', label: 'Чехов А.П' },
+    { value: 'Толстой', label: 'Толстой Л.Н' },
+    { value: 'Достоевский', label: 'Достоевский Ф.М' },
   ];
 
-  const DefaultValue = () => {
-    setRange([1920, 2000]);
-    setSelectedAuthors([]);
-    setFavoritesOnly(false)
-  }
+  const handleRangeChange = (newRange) => {
+    onFilterChange({ ...currentFilters, range: newRange });
+  };
+
+  const handleAuthorsChange = (selected) => {
+    onFilterChange({ ...currentFilters, authors: selected });
+  };
+
+  const handleFavoritesToggle = () => {
+    onFilterChange({ ...currentFilters, favoritesOnly: !currentFilters.favoritesOnly });
+  };
+
+  const resetFilters = () => {
+    onFilterChange({
+      range: [1900, 2000],
+      authors: [],
+      favoritesOnly: false
+    });
+  };
 
   return (
     <div className="filter-panel">
@@ -29,8 +40,8 @@ export default function FilterPanel() {
             <label>
               <input
                 type="checkbox"
-                checked={favoritesOnly}
-                onChange={() => setFavoritesOnly(!favoritesOnly)}
+                checked={currentFilters.favoritesOnly}
+                onChange={handleFavoritesToggle}
               />
               <span>Только избранное</span>
             </label>
@@ -38,8 +49,8 @@ export default function FilterPanel() {
           <Select
             isMulti
             options={authorOptions}
-            value={selectedAuthors}
-            onChange={setSelectedAuthors}
+            value={currentFilters.authors}
+            onChange={handleAuthorsChange}
             placeholder="Выберите автора..."
             classNamePrefix="react-select"
           />
@@ -49,18 +60,16 @@ export default function FilterPanel() {
           <h3 className="filter-title">Диапазон годов</h3>
           <div className="range-slider-container">
             <RangeSlider 
-              min={1900}
-              max={2000}
-              value={range}
-              onInput={setRange}
+              min={1800}
+              max={2023}
+              value={currentFilters.range}
+              onInput={handleRangeChange}
             />
             <div className="range-values">
-              <span>{range[0]}</span>
-              <span>{range[1]}</span>
+              <span>{currentFilters.range[0]}</span>
+              <span>{currentFilters.range[1]}</span>
             </div>
-            <div>
-                <button onClick={DefaultValue} className="reset-button">Сбросить</button>
-            </div>
+            <button onClick={resetFilters} className="reset-button">Сбросить</button>
           </div>
         </div>
       </div>
